@@ -6,11 +6,34 @@ from agents.review_agent import ReviewAgent
 from texttable import Texttable
 
 def print_schedule(schedule):
-    table = Texttable()
-    table.add_row(["Task", "Start Time", "End Time"])
+    if not schedule:
+        print("Schedule is empty.")
+        return
+    
+    # Determine maximum lengths for each column to ensure proper alignment
+    max_task_length = max(len(task['task']) for task in schedule) + 2  # Add some padding
+    max_start_time_length = max(len(task['start_time']) for task in schedule) + 2
+    max_end_time_length = max(len(task['end_time']) for task in schedule) + 2
+    max_response_length = max(len(task.get('response', '')) for task in schedule) + 2
+
+    # Print header
+    print("Final Schedule:")
+    print(f"+{'-'*(max_task_length+2)}+{'-'*(max_start_time_length+2)}+{'-'*(max_end_time_length+2)}+{'-'*(max_response_length+2)}+")
+    print(f"| {'Task':<{max_task_length}}| {'Start Time':<{max_start_time_length}}| {'End Time':<{max_end_time_length}}| {'Suggestion by AI':<{max_response_length}}|")
+    print(f"+{'-'*(max_task_length+2)}+{'-'*(max_start_time_length+2)}+{'-'*(max_end_time_length+2)}+{'-'*(max_response_length+2)}+")
+
+    # Print each task row
     for task in schedule:
-        table.add_row([task["task"], task["start_time"], task["end_time"]])
-    print(table.draw())
+        task_name = task['task']
+        start_time = task['start_time']
+        end_time = task['end_time']
+        response = task.get('response', '')
+
+        print(f"| {task_name:<{max_task_length}}| {start_time:<{max_start_time_length}}| {end_time:<{max_end_time_length}}| {response:<{max_response_length}}|")
+    
+    # Print footer
+    print(f"+{'-'*(max_task_length+2)}+{'-'*(max_start_time_length+2)}+{'-'*(max_end_time_length+2)}+{'-'*(max_response_length+2)}+")
+
 
 def main():
     # Initialize agents

@@ -11,7 +11,8 @@ class ScheduleAgent:
                 schedule.append({
                     "task": task["task"],
                     "start_time": current_time.strftime("%H:%M"),
-                    "end_time": (current_time + timedelta(minutes=task["duration"])).strftime("%H:%M")
+                    "end_time": (current_time + timedelta(minutes=task["duration"])).strftime("%H:%M"),
+                    "response": task["response"],
                 })
                 current_time += timedelta(minutes=task["duration"])
             else:

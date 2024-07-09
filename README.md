@@ -30,48 +30,39 @@ This project generates a daily schedule based on user input tasks, prioritizes t
 ## Output
 
 ```
-User Preferences: {'tasks': [{'task': 'Exercise', 'priority': 1, 'duration': 60}, {'task': 'Work on project', 'priority': 2, 'duration': 180}, {'task': 'Meet with friends', 'priority': 3, 'duration': 120}, {'task': 'Read a book', 'priority': 4, 'duration': 30}], 'day_start_time': '08:00', 'day_end_time': '20:00'}
-
-Prioritized Tasks: [{'task': 'Exercise', 'priority': 1, 'duration': 60}, {'task': 'Work on project', 'priority': 2, 'duration': 180}, {'task': 'Meet with friends', 'priority': 3, 'duration': 120}, {'task': 'Read a book', 'priority': 4, 'duration': 30}]
-
+(venv) akshayjadhav@Akshays-Air personalized-daily-digest % python main.py
+User Preferences: {'tasks': [{'task': 'Exercise', 'priority': 1, 'duration': 60}, {'task': 'Work on AI project', 'priority': 2, 'duration': 180}, {'task': 'Meet with friends', 'priority': 3, 'duration': 120}, {'task': 'Reading a book', 'priority': 4, 'duration': 30}], 'day_start_time': '08:00', 'day_end_time': '20:00'}
+Prioritized Tasks: [{'task': 'Exercise', 'priority': 1, 'duration': 60}, {'task': 'Work on AI project', 'priority': 2, 'duration': 180}, {'task': 'Meet with friends', 'priority': 3, 'duration': 120}, {'task': 'Reading a book', 'priority': 4, 'duration': 30}]
 Validating task: Exercise
 Task validated: Exercise
-Validating task: Work on project
-Task validated: Work on project
+Validating task: Work on AI project
+Task validated: Work on AI project
 Validating task: Meet with friends
 Task validated: Meet with friends
-Validating task: Read a book
-Task validated: Read a book
-
-Validated Tasks: [{'task': 'Exercise', 'priority': 1, 'duration': 60}, {'task': 'Work on project', 'priority': 2, 'duration': 180}, {'task': 'Meet with friends', 'priority': 3, 'duration': 120}, {'task': 'Read a book', 'priority': 4, 'duration': 30}]
-
+Validating task: Reading a book
+Task validated: Reading a book
+Validated Tasks: [{'task': 'Exercise', 'priority': 1, 'duration': 60, 'response': 'Exercise for muscle building and strength.'}, {'task': 'Work on AI project', 'priority': 2, 'duration': 180, 'response': 'Researchers work on self-organizing neural networks for enhanced adaptability in AI projects.'}, {'task': 'Meet with friends', 'priority': 3, 'duration': 120, 'response': 'Connecting with friends boosts workplace happiness and combats loneliness, fostering better relationships and engagement.'}, {'task': 'Reading a book', 'priority': 4, 'duration': 30, 'response': 'AI can generate personalized short stories or chapters for reading while relaxing in bed.'}]
 Schedule:
-+-------------------+------------+----------+
-| Task              | Start Time | End Time |
-+-------------------+------------+----------+
-| Exercise          | 08:00      | 09:00    |
-+-------------------+------------+----------+
-| Work on project   | 09:00      | 12:00    |
-+-------------------+------------+----------+
-| Meet with friends | 12:00      | 14:00    |
-+-------------------+------------+----------+
-| Read a book       | 14:00      | 14:30    |
-+-------------------+------------+----------+
-
 Final Schedule:
-+-------------------+------------+----------+
-| Task              | Start Time | End Time |
-+-------------------+------------+----------+
-| Exercise          | 08:00      | 09:00    |
-+-------------------+------------+----------+
-| Work on project   | 09:00      | 12:00    |
-+-------------------+------------+----------+
-| Meet with friends | 12:00      | 14:00    |
-+-------------------+------------+----------+
-| Read a book       | 14:00      | 14:30    |
-+-------------------+------------+----------+
-| Reviewed          |            |          |
-+-------------------+------------+----------+
++----------------------+---------+---------+-----------------------------------------------------------------------------------------------------------------------------+
+| Task                | Start Time| End Time| Suggestion by AI                                                                                                           |
++----------------------+---------+---------+-----------------------------------------------------------------------------------------------------------------------------+
+| Exercise            | 08:00  | 09:00  | Exercise for muscle building and strength.                                                                                 |
+| Work on AI project  | 09:00  | 12:00  | Researchers work on self-organizing neural networks for enhanced adaptability in AI projects.                              |
+| Meet with friends   | 12:00  | 14:00  | Connecting with friends boosts workplace happiness and combats loneliness, fostering better relationships and engagement.  |
+| Reading a book      | 14:00  | 14:30  | AI can generate personalized short stories or chapters for reading while relaxing in bed.                                  |
++----------------------+---------+---------+-----------------------------------------------------------------------------------------------------------------------------+
+Final Schedule:
+Final Schedule:
++----------------------+---------+---------+----+
+| Task                | Start Time| End Time| Suggestion by AI|
++----------------------+---------+---------+----+
+| Exercise            | 08:30  | 09:30  |   |
+| Work on AI project  | 09:30  | 12:30  |   |
+| Meet with friends   | 12:30  | 14:30  |   |
+| Reading a book      | 14:30  | 15:00  |   |
+| Reviewed            |        |        |   |
++----------------------+---------+---------+----+
 ```
 
 ## Conclusion
